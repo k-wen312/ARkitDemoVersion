@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ARView-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" userLabel="ARView" customClass="ViewController" customModule="ARkitDemoVersion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lCd-0V-mia">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Gh-hH-u3D">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ox-jv-i83">
+                                <rect key="frame" x="166" y="643" width="82" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Scan"/>
+                                <connections>
+                                    <action selector="scanButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KzR-ql-Kfw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="距離：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Feo-Rk-cEk">
+                                <rect key="frame" x="20" y="695" width="183" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R85-TW-zli" customClass="CenterView" customModule="ARkitDemoVersion" customModuleProvider="target">
+                                <rect key="frame" x="87" y="295.66666666666669" width="240" height="145"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="145" id="21w-dK-8Ki"/>
+                                    <constraint firstAttribute="width" constant="240" id="bsD-MH-O4J"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MVP-1b-3z8">
+                                <rect key="frame" x="146" y="516" width="181" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="w8w-3O-BxT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="R85-TW-zli" firstAttribute="centerX" secondItem="lCd-0V-mia" secondAttribute="centerX" id="9MD-O9-eVJ"/>
+                            <constraint firstItem="0Gh-hH-u3D" firstAttribute="trailing" secondItem="lCd-0V-mia" secondAttribute="trailing" id="Apj-5u-LTd"/>
+                            <constraint firstItem="R85-TW-zli" firstAttribute="centerY" secondItem="lCd-0V-mia" secondAttribute="centerY" id="POh-BT-eMy"/>
+                            <constraint firstItem="0Gh-hH-u3D" firstAttribute="leading" secondItem="lCd-0V-mia" secondAttribute="leading" id="hON-QM-ycd"/>
+                            <constraint firstItem="0Gh-hH-u3D" firstAttribute="bottom" secondItem="lCd-0V-mia" secondAttribute="bottom" id="uc6-kQ-srz"/>
+                            <constraint firstItem="0Gh-hH-u3D" firstAttribute="top" secondItem="lCd-0V-mia" secondAttribute="top" id="xSL-TK-emc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="angleLabel" destination="MVP-1b-3z8" id="ILL-Tq-YD8"/>
+                        <outlet property="centerView" destination="R85-TW-zli" id="Hul-la-FAi"/>
+                        <outlet property="distance" destination="Feo-Rk-cEk" id="aIt-Zc-0cI"/>
+                        <outlet property="sceneView" destination="0Gh-hH-u3D" id="AR7-OH-75m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="133.69565217391306"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
